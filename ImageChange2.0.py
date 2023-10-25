@@ -63,32 +63,6 @@ def remove_transparency(im, bg_colour=(255, 255, 255)):
         return im
 
 
-def ma():
-    '''
-    转为BMP格式
-    '''
-    pass
-    # print('转为bmp格式')
-    # print(os.listdir(os.getcwd()))
-    # for i in (os.listdir(os.getcwd())):
-    #     if i.lower().split('.')[-1] == 'png' or i.lower().split('.')[-1] == 'jpg':  # 判断图片格式是否为 png 或 jpg
-    #         imgName = i.lower().split('.')[0]  # 获取文件名
-    #         # i = oldpath  + '\\'+i
-    #         if i.lower().split('.')[-1] == 'jpg':
-    #             img = Image.open(i)  # 打开图片
-    #             img = remove_transparency(img)  # 透明度处理
-    #             img.save(imgName + '.bmp', 'bmp')
-    #
-    #         if i.lower().split('.')[-1] == 'png':
-    #             img = Image.open(i).convert("1")  # 打开图片
-    #             img.save(imgName + '.bmp', 'bmp')
-    #
-    # for i in (os.listdir(os.getcwd())):
-    #     if i.lower().split('.')[-1] == 'png' or i.lower().split('.')[-1] == 'jpg':  # 判断图片格式是否为 png 或 jpg
-    #         os.remove(i)  # 删除 后缀为 jpg 或 png 的图片
-    #
-    # # tkinter.messagebox.showwarning(title='OK',message='转换完成')
-    # print(" 转为BMP格式转换完成!")
 
 
 def convert_to_rgb565(img):
@@ -345,7 +319,6 @@ def beginSpilt():
     img = Image.open(gif_file)  # 打开选择的GIF
     saveFps(img)  # 提取并保存GIF的每一帧
     resizeImg()  # 重置图片大小并转换为bmp模式（改为48X48）
-    # ma()  # 转为BMP格式
 
     file = os.listdir(os.getcwd())  # 获取路径下的所有文件
     file.sort(key=lambda x: int(x[:-4]))  # 按照文件名 排序
