@@ -48,8 +48,6 @@ def remove_transparency(im, bg_colour=(255, 255, 255)):
     @parameter: im - Image object
                 bg_colour -  BackgroundColor
     '''
-    # 仅当图像具有透明度时进行处理
-    # if im.mode in ('RGBA', 'LA') or (im.mode == 'P' and 'transparency' in im.info):
     if True:
         # 需要转换为RGBA如果LA格式由于PIL的一个bug
         alpha = im.convert('RGBA').split()[-1]
@@ -59,10 +57,6 @@ def remove_transparency(im, bg_colour=(255, 255, 255)):
         bg = Image.new("RGBA", im.size, bg_colour + (255,))
         bg.paste(im, mask=alpha)
         return bg
-    else:
-        return im
-
-
 
 
 def convert_to_rgb565(img):
@@ -195,7 +189,6 @@ def bmp2hex(imgFile):
         return outputList, bin_list
     else:
         return list2, bin_list
-    # tkinter.messagebox.showwarning(title='ok',message='保存完成')
 
 
 def bmp2hex_oled(imgFile):
@@ -351,8 +344,6 @@ def beginSpilt():
 
     # bmp2hex()  # 图片取模，保存数组文件
 
-    # generateArduinoCode(); #  生成 Arduino 代码
-
 
 def splitGif():
     '''
@@ -360,9 +351,6 @@ def splitGif():
     '''
     tkinter.messagebox.showwarning(title='开始', message='需要一小会儿时间...请稍后,点击确定开始')
     beginSpilt()
-    # splitThread = threading.Thread(target=beginSpilt)
-    # splitThread.setDaemon(True)
-    # splitThread.start()
 
 
 windows = Tk()
